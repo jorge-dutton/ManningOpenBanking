@@ -1,4 +1,4 @@
-package com.jdutton.manning.openbanking.model;
+package com.jdutton.manning.openbanking.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class Transaction {
+public class TransactionDto {
 	private String type;
 	private Date date;
 	private String accountNumber;

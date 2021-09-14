@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.jdutton.manning.openbanking.model.Transaction;
+import com.jdutton.manning.openbanking.dto.TransactionDto;
 import com.jdutton.manning.openbanking.service.TransactionService;
 
 @SpringBootTest
@@ -19,7 +19,7 @@ class TransactionServiceTest {
 	
 	@Test
 	void findByAccountNumberTest() throws Exception{
-		List<Transaction> transactionList = this.transactionService.findAllByAccountNumber(null);
+		List<TransactionDto> transactionList = this.transactionService.findAllByAccountNumber(null);
 		assertEquals(5, transactionList.size());
 	}
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jdutton.manning.openbanking.model.Transaction;
+import com.jdutton.manning.openbanking.dto.TransactionDto;
 import com.jdutton.manning.openbanking.service.TransactionService;
 
 @RestController
@@ -23,7 +23,7 @@ public class TransactionController {
 
 	@GetMapping
 	@RequestMapping("/transactions/{accountNumber}")
-	public List<Transaction> getTransactionByAccountNumber(@PathParam("accountNumber") String accountNumber) throws Exception {
+	public List<TransactionDto> getTransactionByAccountNumber(@PathParam("accountNumber") String accountNumber) throws Exception {
 		return this.transactionService.findAllByAccountNumber(accountNumber);
 	}
 }

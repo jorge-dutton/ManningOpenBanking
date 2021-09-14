@@ -9,20 +9,20 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.jdutton.manning.openbanking.model.Transaction;
+import com.jdutton.manning.openbanking.dto.TransactionDto;
 
 @Service
 public class TransactionServiceImpl implements TransactionService{
 
 	@Override
-	public List<Transaction> findAllByAccountNumber(String acountNumber) throws Exception {
+	public List<TransactionDto> findAllByAccountNumber(String acountNumber) throws Exception {
 		return this.getMockTransactionList();
 	}
 	
-	private List<Transaction> getMockTransactionList() throws Exception {
-		List<Transaction> transactionsList = new ArrayList<>();
+	private List<TransactionDto> getMockTransactionList() throws Exception {
+		List<TransactionDto> transactionsList = new ArrayList<>();
 		
-		var transaction = new Transaction();
+		var transaction = new TransactionDto();
 		transaction.setAccountNumber("11111111111111111111");
 		transaction.setCurrency("EUR");
 		transaction.setDate(new SimpleDateFormat("dd/MM/yyyy").parse("13/09/2021"));
@@ -33,7 +33,7 @@ public class TransactionServiceImpl implements TransactionService{
 		
 		transactionsList.add(transaction);
 		
-		var transaction2 = new Transaction();
+		var transaction2 = new TransactionDto();
 		transaction2.setAccountNumber("11111111111111111111");
 		transaction2.setCurrency("EUR");
 		transaction2.setDate(new SimpleDateFormat("dd/MM/yyyy").parse("12/09/2021"));
@@ -43,7 +43,7 @@ public class TransactionServiceImpl implements TransactionService{
 		transaction2.setType("type2");
 		transactionsList.add(transaction2);
 		
-		var transaction3 = new Transaction();
+		var transaction3 = new TransactionDto();
 		transaction3.setAccountNumber("11111111111111111111");
 		transaction3.setCurrency("EUR");
 		transaction3.setDate(new SimpleDateFormat("dd/MM/yyyy").parse("12/09/2021"));
@@ -53,7 +53,7 @@ public class TransactionServiceImpl implements TransactionService{
 		transaction3.setType("type3");
 		transactionsList.add(transaction3);
 		
-		var transaction4 = new Transaction();
+		var transaction4 = new TransactionDto();
 		transaction4.setAccountNumber("11111111111111111111");
 		transaction4.setCurrency("EUR");
 		transaction4.setDate(new SimpleDateFormat("dd/MM/yyyy").parse("11/09/2021"));
@@ -63,7 +63,7 @@ public class TransactionServiceImpl implements TransactionService{
 		transaction4.setType("type4");
 		transactionsList.add(transaction4);
 		
-		var transaction5 = new Transaction();
+		var transaction5 = new TransactionDto();
 		transaction5.setAccountNumber("11111111111111111111");
 		transaction5.setCurrency("EUR");
 		transaction5.setDate(new SimpleDateFormat("dd/MM/yyyy").parse("10/09/2021"));
