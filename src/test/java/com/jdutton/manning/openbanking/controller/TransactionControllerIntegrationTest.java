@@ -1,8 +1,6 @@
 package com.jdutton.manning.openbanking.controller;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.Test;
@@ -12,12 +10,12 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
+import com.jdutton.manning.openbanking.ManningOpenBankingApplication;
 import com.jdutton.manning.openbanking.service.TransactionService;
 
 @AutoConfigureMockMvc
-@ContextConfiguration(classes = { TransactionController.class })
+@ContextConfiguration(classes = { ManningOpenBankingApplication.class })
 @WebMvcTest
 class TransactionControllerIntegrationTest {
 
@@ -29,14 +27,10 @@ class TransactionControllerIntegrationTest {
 
 	@Test
 	void getTransactionsTes() throws Exception {
-		
-		MvcResult result = mockMvc
-				.perform(get("/transactions/{accoutNumber}", "11111111111111111111"))
-				.andExpect(content().contentType("application/json"))
-				.andExpect(status().isOk())
-				.andReturn();
 
-		assertNotNull(result);
+		mockMvc
+		.perform(get("/api/v1/transactions/11111111111111111111"))
+		.andExpect(status().isOk());
 	}
 
 }
