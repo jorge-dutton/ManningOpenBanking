@@ -12,6 +12,7 @@ import com.jdutton.manning.openbanking.dto.TransactionDto;
 import com.jdutton.manning.openbanking.service.TransactionService;
 
 @RestController
+@RequestMapping("/api/v1")
 public class TransactionController {
 	
 	private TransactionService transactionService;

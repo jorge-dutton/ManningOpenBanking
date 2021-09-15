@@ -1,4 +1,4 @@
-package com.jdutton.manning.openbanking.test;
+package com.jdutton.manning.openbanking.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.jdutton.manning.openbanking.dto.TransactionDto;
-import com.jdutton.manning.openbanking.service.TransactionService;
 
 @SpringBootTest
 class TransactionServiceTest {
